@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-image-control',
-  imports: [NgIf],
+  imports: [],
   templateUrl: './image-control.component.html',
   styleUrl: './image-control.component.css'
 })

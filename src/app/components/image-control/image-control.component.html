@@ -1,5 +1,22 @@
 <div class="container">
     <div class="image-container">
-        <p *ngIf="!imageUrl">Selecciona una imagen</p>
+        @if (!imageUrl){
+            <p>Selecciona una imagen</p>
+        }
+        @if (imageUrl) {
+            <div class="image-container">
+                <img [src]="imageUrl" alt="Uploaded" class="image"/>
+            </div>
+        }
+        <!-- predicciones
+        
+        manejo de error-->
+
+        <input type="file" (change)="{}" accept="image/*">
+        <button (click)="{}" [disabled]="!selectedFile">
+            {{(imageUrl ? 'Identique una Imagen':'Actualizar imagen')}}
+        </button>
+
+        <!-- Loading -->
     </div>
 </div>
