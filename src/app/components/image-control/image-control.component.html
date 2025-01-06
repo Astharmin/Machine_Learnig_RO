@@ -8,15 +8,27 @@
                 <img [src]="imageUrl" alt="Uploaded" class="image"/>
             </div>
         }
-        <!-- predicciones
-        
-        manejo de error-->
+        @if (prediction$ | async; as predictions) {
+            @if (predictions.length > 0) {
+                <div class="prediction-box">
+                    <p class="category-text">{{predictions[0].category | uppercase}}</p>
+                    <p class="category-accuracy">{{predictions[0].score | percent: '1.1-1'}} Accuracy</p>
+                </div>
+            }
+        }
+
+        @if (error$ |async; as error) {
+            <p class="error">{{error}}</p>
+        }
 
         <input type="file" (change)="{}" accept="image/*">
         <button (click)="{}" [disabled]="!selectedFile">
             {{(imageUrl ? 'Identique una Imagen':'Actualizar imagen')}}
         </button>
 
-        <!-- Loading -->
+        @if (loading$ | async) {
+            <p>Procesing imagen...</p>
+        }
+
     </div>
 </div>
