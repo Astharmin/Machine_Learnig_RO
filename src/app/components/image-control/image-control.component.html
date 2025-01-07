@@ -21,8 +21,8 @@
             <p class="error">{{error}}</p>
         }
 
-        <input type="file" (change)="{}" accept="image/*">
-        <button (click)="{}" [disabled]="!selectedFile">
+        <input type="file" (change)="onFileSelected($event)" accept="image/*">
+        <button (click)="uploadImage()" [disabled]="!selectedFile">
             {{(imageUrl ? 'Identique una Imagen':'Actualizar imagen')}}
         </button>
 
