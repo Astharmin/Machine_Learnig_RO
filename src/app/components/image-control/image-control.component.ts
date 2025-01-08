@@ -4,11 +4,13 @@ import { Observable, of} from 'rxjs';
 import { Prediction } from '../../types/types';
 import { UploadService } from '../../services/upload.service';
 import { api_key } from '../../keys/api_keys';
+import { ImageComponent } from "../image/image.component";
+import { PredictionComponent } from "../prediction/prediction.component";
 
 @Component({
   selector: 'app-image-control',
   standalone: true,
-  imports: [AsyncPipe, UpperCasePipe, PercentPipe],
+  imports: [AsyncPipe, UpperCasePipe, PercentPipe, ImageComponent, PredictionComponent],
   templateUrl: './image-control.component.html',
   styleUrl: './image-control.component.css'
 })
