@@ -1,1 +1,1 @@
-export const api_key: string = 'https://127.0.0.1:8000'
+export const api_key: string = 'http://127.0.0.1:8000'
